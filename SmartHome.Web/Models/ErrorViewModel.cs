@@ -1,6 +1,6 @@
 using System;
 
-namespace SmartHome.Models
+namespace SmartHome.Web.Models
 {
     public class ErrorViewModel
     {

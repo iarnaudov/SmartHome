@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using SmartHome.Models;
+using SmartHome.Web.Models;
 
-namespace SmartHome.Controllers
+namespace SmartHome.Web.Controllers
 {
     public class HomeController : Controller
     {
