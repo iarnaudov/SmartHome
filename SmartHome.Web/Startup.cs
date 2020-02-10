@@ -12,6 +12,8 @@ using SmartHome.Web.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SmartHome.Web.Models;
+using SmartHome.Web.Models.User;
 
 namespace SmartHome.Web
 {
@@ -27,10 +29,20 @@ namespace SmartHome.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SmartHomeConnection")));
+            services.AddDbContext<SmartHomeDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SmartHomeConnection")));
             services
-                .AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddIdentity<AppUser, AppRole>(options =>
+                {
+                    options.User.RequireUniqueEmail = true;
+                    options.Password.RequireDigit = false;
+                    options.Password.RequireLowercase = false;
+                    options.Password.RequireNonAlphanumeric = false;
+                    options.Password.RequireUppercase = false;
+                    options.Password.RequiredLength = 6;
+                })
+                .AddDefaultUI()
+                .AddEntityFrameworkStores<SmartHomeDbContext>()
+                .AddDefaultTokenProviders();
             services
                 .AddControllersWithViews()
                 .AddRazorRuntimeCompilation();

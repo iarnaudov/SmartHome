@@ -1,4 +1,4 @@
-﻿namespace SmartHome.Models
+﻿namespace SmartHome.Web.Models.Listing
 {
     public class Image
     {

@@ -5,13 +5,36 @@
     <UserSecretsId>aspnet-SmartHome.Web-19CD2677-A568-4FEF-9F29-791356E6F812</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20200210192332_identity3.cs" />
+    <Compile Remove="Data\Migrations\20200210192332_identity3.Designer.cs" />
+    <Compile Remove="Migrations\20200210200007_added_listing.cs" />
+    <Compile Remove="Migrations\20200210200007_added_listing.Designer.cs" />
+    <Compile Remove="Migrations\20200210200647_added_listing.cs" />
+    <Compile Remove="Migrations\20200210200647_added_listing.Designer.cs" />
+    <Compile Remove="Migrations\20200210202050_added_perks_and_images.cs" />
+    <Compile Remove="Migrations\20200210202050_added_perks_and_images.Designer.cs" />
+    <Compile Remove="Migrations\20200210202224_added_db_sets.cs" />
+    <Compile Remove="Migrations\20200210202224_added_db_sets.Designer.cs" />
+    <Compile Remove="Migrations\20200210202327_added_db_sets1.cs" />
+    <Compile Remove="Migrations\20200210202327_added_db_sets1.Designer.cs" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Data\Migrations\" />
   </ItemGroup>
 
 </Project>
